@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import {
+  TextInput,
   View,
 } from 'react-native';
-import NewMessageForm from './NewMessageForm';
 
-export default class App extends Component {
+export default class NewMessageForm extends Component {
   render() {
     return (
       <View>
-        <NewMessageForm />
+        <TextInput
+          testID="messageText"
+        />
       </View>
     );
   }

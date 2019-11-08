@@ -18,6 +18,7 @@
     "@babel/runtime": "^7.7.2",
     "@react-native-community/eslint-config": "^0.0.5",
     "babel-jest": "^24.9.0",
+    "detox": "^14.7.0",
     "eslint": "^6.6.0",
     "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.57.0",
@@ -26,5 +27,16 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "detox": {
+    "test-runner": "jest",
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/ReactNativeTDD.app",
+        "build": "xcodebuild -workspace ios/ReactNativeTDD.xcworkspace -scheme ReactNativeTDD -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+        "type": "ios.simulator",
+        "name": "iPhone 11"
+      }
+    }
   }
 }

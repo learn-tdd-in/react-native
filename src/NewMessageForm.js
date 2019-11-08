@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import {Button, TextInput, View} from 'react-native';
 
-const NewMessageForm = () => {
+const NewMessageForm = ({onSend}) => {
   const [inputText, setInputText] = useState('');
 
   const handleSend = () => {
+    onSend(inputText);
     setInputText('');
   };
 

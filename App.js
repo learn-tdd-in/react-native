@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {SafeAreaView, StatusBar, View} from 'react-native';
 import NewMessageForm from './src/NewMessageForm';
+import MessageList from './src/MessageList';
 
 const App = () => {
-  const handleSend = newMessage => {};
+  const [messages, setMessages] = useState([]);
+  const handleSend = newMessage => {
+    setMessages([newMessage, ...messages]);
+  };
 
   return (
     <>
@@ -11,6 +15,7 @@ const App = () => {
       <SafeAreaView>
         <View>
           <NewMessageForm onSend={handleSend} />
+          <MessageList data={messages} />
         </View>
       </SafeAreaView>
     </>

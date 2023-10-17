@@ -1,10 +1,15 @@
 import React, {useState} from 'react';
 import {Pressable, Text, TextInput} from 'react-native';
 
-export default function NewMessageForm() {
+interface NewMessageFormProps {
+  onSend: (message: string) => void;
+}
+
+export default function NewMessageForm({onSend}: NewMessageFormProps) {
   const [inputText, setInputText] = useState('');
 
   function handleSend() {
+    onSend(inputText);
     setInputText('');
   }
 

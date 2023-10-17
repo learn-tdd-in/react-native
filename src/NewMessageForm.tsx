@@ -1,6 +1,13 @@
 import React from 'react';
-import {TextInput} from 'react-native';
+import {Pressable, Text, TextInput} from 'react-native';
 
 export default function NewMessageForm() {
-  return <TextInput testID="messageText" />;
+  return (
+    <>
+      <TextInput testID="messageText" />
+      <Pressable testID="sendButton">
+        <Text>Send</Text>
+      </Pressable>
+    </>
+  );
 }

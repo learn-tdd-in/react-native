@@ -1,3 +1,6 @@
+import React from 'react';
+import {TextInput} from 'react-native';
+
 export default function NewMessageForm() {
-  return null;
+  return <TextInput testID="messageText" />;
 }
